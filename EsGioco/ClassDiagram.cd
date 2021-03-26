@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EsGioco.Personaggio">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAgAIQAAAAAAFEAAAAAgAABAAAAAAgAIACBAAAEAgAA=</HashCode>
+      <FileName>Personaggio.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ArmaSelezionata" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ListaAnimazioni" />
+      <Property Name="ListaArmiAstratte" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EsGioco.Arma">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAEAAQAAAAABAAAAAAACAAABAAAEAAAA=</HashCode>
+      <FileName>Arma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsGioco.Impostazioni">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAEAAAAAAACABBAAAEAgAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Impostazioni.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsGioco.ArmaEstratta">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ArmaEstratta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsGioco.Animazione">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAEQAAE=</HashCode>
+      <FileName>Animazione.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Frame" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EsGioco.Frame">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Frame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
