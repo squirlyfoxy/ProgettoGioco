@@ -10,7 +10,6 @@ namespace EsGioco
         private string _nome;
         private string _percorsoImmagine;
         private int _danno;
-        private string _fileAudio;
         public Arma()
         {
 
@@ -49,15 +48,6 @@ namespace EsGioco
             }
         }
 
-        public string FileAudio
-        {
-            get
-            {
-                return _fileAudio;
-            }
-            set
-            {
-            }
-        }
+     
     }
 }
