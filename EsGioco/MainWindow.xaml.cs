@@ -25,6 +25,14 @@ namespace EsGioco
             InitializeComponent();
         }
 
+        public SceltaPersonaggi SceltaPersonaggi
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void btnGioca_Click(object sender, RoutedEventArgs e)
         {
 

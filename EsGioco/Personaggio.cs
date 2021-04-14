@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace EsGioco
 {
-    public class Personaggio
+    public class Personaggio : IEquatable<Personaggio>
     {
         private string _nome;
         private int _puntiVita;
@@ -14,9 +15,12 @@ namespace EsGioco
         private List<Animazione> _listaAnimazioni;
         private int _puntiForzaBase;
 
-        public Personaggio()
+        public Personaggio(string nome, int puntiVita, string percorsoImmagine, int puntiForzaBase)
         {
-
+            Nome = nome;
+            PuntiVita = puntiVita;
+            PercorsoImmagine = percorsoImmagine;
+            PuntiForzaBase = puntiForzaBase;
         }
 
         public string Nome
@@ -25,8 +29,9 @@ namespace EsGioco
             {
                 return _nome;
             }
-            set
+            private set
             {
+                _nome = value;
             }
         }
 
@@ -36,8 +41,9 @@ namespace EsGioco
             {
                 return _percorsoImmagine;
             }
-            set
+            private set
             {
+                _percorsoImmagine = value;
             }
         }
 
@@ -47,8 +53,9 @@ namespace EsGioco
             {
                 return _puntiVita;
             }
-            set
+            private set
             {
+                _puntiVita = value;
             }
         }
 
@@ -58,8 +65,9 @@ namespace EsGioco
             {
                 return _listaArmi;
             }
-            set
+            private set
             {
+
             }
         }
 
@@ -80,9 +88,15 @@ namespace EsGioco
             {
                 return _puntiForzaBase;
             }
-            set
+            private set
             {
+                _puntiForzaBase = value;
             }
+        }
+
+        public bool Equals(Personaggio other)
+        {
+            return this.Nome.Equals(other.Nome);
         }
     }
 }
