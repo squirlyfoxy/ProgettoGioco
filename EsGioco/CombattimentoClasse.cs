@@ -103,8 +103,12 @@ namespace EsGioco
 
         public void TogliVita(ref Personaggio p, int q)
         {
-<<<<<<< HEAD
-            
+            if (p.PuntiVita - q <= 0)
+            {
+                throw new Exceprions.PersonaggioSenzaVitaException(p, q);
+            }
+
+            p.PuntiVita -= q;
         }
 
         private Personaggio Perdente()
@@ -121,14 +125,6 @@ namespace EsGioco
             {
                 throw new Exception("Errore");
             }
-=======
-            if (p.PuntiVita - q <= 0)
-            {
-                throw new Exceprions.PersonaggioSenzaVitaException(p, q);
-            }
-
-            p.PuntiVita -= q;
->>>>>>> 68ef37944744fbfd4355ecc3687836be41ed98c0
         }
     }
 }

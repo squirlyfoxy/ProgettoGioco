@@ -53,7 +53,7 @@ namespace EsGioco
             {
                 return _puntiVita;
             }
-            private set
+            set
             {
                 _puntiVita = value;
             }
