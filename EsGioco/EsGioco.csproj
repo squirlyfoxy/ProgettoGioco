@@ -60,6 +60,7 @@
       <DependentUpon>Combattimento.xaml</DependentUpon>
     </Compile>
     <Compile Include="CombattimentoClasse.cs" />
+    <Compile Include="Exceprions\PersonaggioSenzaVitaException.cs" />
     <Compile Include="SceltaPersonaggi.xaml.cs">
       <DependentUpon>SceltaPersonaggi.xaml</DependentUpon>
     </Compile>

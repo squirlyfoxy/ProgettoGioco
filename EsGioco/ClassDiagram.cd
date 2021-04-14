@@ -129,5 +129,12 @@
       <Property Name="Vincitore" />
     </ShowAsAssociation>
   </Class>
+  <Class Name="EsGioco.Exceprions.PersonaggioSenzaVitaException" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceprions\PersonaggioSenzaVitaException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
