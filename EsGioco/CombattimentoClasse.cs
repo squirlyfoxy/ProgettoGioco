@@ -11,7 +11,6 @@ namespace EsGioco
         Personaggio _p2;
         Arma _armaP1;
         Arma _armaP2;
-        Personaggio _vincitore;
 
         public CombattimentoClasse(Personaggio p1, Personaggio p2, Arma armaP1, Arma armaP2)
         {
@@ -69,62 +68,67 @@ namespace EsGioco
             }
         }
 
-        public Personaggio Vincitore
+        public void AttacoP1()
         {
-            get
+            if (!P2.Schiva)
             {
-                return _vincitore;
+                TogliVita(P2);
             }
-            set
-            {
-                _vincitore = value;
-            }
-        }
-
-        public void AttaccoP1()
-        {
-           
         }
 
         public void AttaccoP2()
         {
-            
-        }
-
-        public void SchivaP1()
-        {
-            
-        }
-
-        public void SchivaP2()
-        {
-            
-        }
-
-        public void TogliVita(ref Personaggio p, int q)
-        {
-            if (p.PuntiVita - q <= 0)
+            if (!P1.Schiva)
             {
-                throw new Exceprions.PersonaggioSenzaVitaException(p, q);
+                TogliVita(P1);
             }
-
-            p.PuntiVita -= q;
         }
 
-        private Personaggio Perdente()
+        private int CalcolaDanno(Personaggio personaggioCheColpisce)
         {
-            if (Vincitore.Equals(P1))
+            int danno;
+
+            if (personaggioCheColpisce.Equals(P1))
             {
-                return P2;
-            }
-            else if (Vincitore.Equals(P2))
-            {
-                return P1;
+                danno = P1.PuntiForzaBase + ArmaP1.Danno;
             }
             else
             {
-                throw new Exception("Errore");
+                danno = P2.PuntiForzaBase + ArmaP2.Danno;
+            }
+
+            return danno;
+        }
+
+        private void TogliVita(Personaggio personaggioColpito)
+        {
+            int q;
+            if (personaggioColpito.Equals(P1))
+            {
+                q = CalcolaDanno(P2);
+            }
+            else
+            {
+                q = CalcolaDanno(P1);
+            }
+
+            if (personaggioColpito.PuntiVita - q <= 0)
+            {
+                throw new Exceprions.PersonaggioSenzaVitaException(personaggioColpito, q);
+            }
+
+            personaggioColpito.PuntiVita -= q;
+
+            if (personaggioColpito.Equals(P1))
+            {
+                P1.PuntiVita = personaggioColpito.PuntiVita;
+            }
+            else
+            {
+                P2.PuntiVita = personaggioColpito.PuntiVita;
             }
         }
+
+
     }
 }
