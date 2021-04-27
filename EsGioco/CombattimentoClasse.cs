@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using System.Windows;
 
 namespace EsGioco
 {
@@ -83,6 +85,8 @@ namespace EsGioco
                 TogliVita(P1);
             }
         }
+
+
 
         private int CalcolaDanno(Personaggio personaggioCheColpisce)
         {
