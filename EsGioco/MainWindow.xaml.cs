@@ -20,17 +20,11 @@ namespace EsGioco
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Videogioco Videogioco { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public SceltaPersonaggi SceltaPersonaggi
-        {
-            get => default;
-            set
-            {
-            }
         }
 
         private void btnGioca_Click(object sender, RoutedEventArgs e)

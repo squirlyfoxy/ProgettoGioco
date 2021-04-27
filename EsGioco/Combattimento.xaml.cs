@@ -19,8 +19,12 @@ namespace EsGioco
     /// </summary>
     public partial class Combattimento : Window
     {
-        public Combattimento()
+        private CombattimentoClasse ClasseCombattimento { get; set; }
+
+        public Combattimento(CombattimentoClasse cl)
         {
+            ClasseCombattimento = cl;
+
             InitializeComponent();
         }
     }
