@@ -68,12 +68,16 @@ namespace EsGioco
 
         private void btnProntoP2_Click(object sender, RoutedEventArgs e)
         {
-
+            CaricamentoPartita finestra = new CaricamentoPartita();
+            finestra.Show();
+            this.Close();
         }
 
         private void btnOpzioni_Click(object sender, RoutedEventArgs e)
         {
-
+            Opzioni finestra = new Opzioni();
+            finestra.Show();
+            this.Close();
         }
 
         

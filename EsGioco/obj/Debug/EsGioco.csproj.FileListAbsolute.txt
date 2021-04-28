@@ -17,3 +17,7 @@ C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\EsGioco.csproj.Generat
 C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\EsGioco.csproj.CoreCompileInputs.cache
 C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\EsGioco.exe
 C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\EsGioco.pdb
+C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\Opzioni.g.cs
+C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\Opzioni.baml
+C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\CaricamentoPartita.g.cs
+C:\Users\Standard\Desktop\ProgettoGioco\EsGioco\obj\Debug\CaricamentoPartita.baml

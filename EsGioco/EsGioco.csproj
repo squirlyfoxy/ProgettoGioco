@@ -56,14 +56,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CaricamentoPartita.xaml.cs">
+      <DependentUpon>CaricamentoPartita.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Combattimento.xaml.cs">
       <DependentUpon>Combattimento.xaml</DependentUpon>
     </Compile>
     <Compile Include="CombattimentoClasse.cs" />
+    <Compile Include="Opzioni.xaml.cs">
+      <DependentUpon>Opzioni.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SceltaPersonaggi.xaml.cs">
       <DependentUpon>SceltaPersonaggi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Videogioco.cs" />
+    <Page Include="CaricamentoPartita.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Combattimento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +94,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Opzioni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SceltaPersonaggi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

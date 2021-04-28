@@ -1,0 +1,21 @@
+﻿<Window x:Class="EsGioco.Opzioni"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EsGioco"
+        mc:Ignorable="d"
+        Title="Opzioni" Height="450" Width="800">
+    <Grid>
+        <Label Content="Musica" HorizontalAlignment="Left" Margin="159,71,0,0" VerticalAlignment="Top" Width="71" Height="41" FontSize="16"/>
+        <Label Content="Schermo intero" HorizontalAlignment="Left" Margin="159,135,0,0" VerticalAlignment="Top" Width="119" Height="41" FontSize="16"/>
+        <Label Content="Effetti sonori" HorizontalAlignment="Left" Margin="159,205,0,0" VerticalAlignment="Top" Width="100" Height="41" FontSize="16"/>
+        <Label Content="Come si gioca?" HorizontalAlignment="Left" Margin="159,281,0,0" VerticalAlignment="Top" Width="119" Height="41" FontSize="16"/>
+        <CheckBox x:Name="checkBoxMusica" Content="Seleziona" HorizontalAlignment="Left" Margin="316,81,0,0" VerticalAlignment="Top" Height="18" Width="86"/>
+        <CheckBox x:Name="checkBoxSchermo" Content="Seleziona" HorizontalAlignment="Left" Margin="316,145,0,0" VerticalAlignment="Top" Height="18" Width="86"/>
+        <CheckBox x:Name="checkBoxEffetti" Content="Seleziona" HorizontalAlignment="Left" Margin="316,215,0,0" VerticalAlignment="Top" Height="18" Width="86"/>
+        <CheckBox x:Name="checkBoxRegole" Content="Seleziona" HorizontalAlignment="Left" Margin="316,291,0,0" VerticalAlignment="Top" Height="18" Width="86"/>
+        <Button x:Name="btnIndietro" Content="Indietro" HorizontalAlignment="Left" Margin="680,348,0,0" VerticalAlignment="Top" Width="75" Height="48" Click="btnIndietro_Click"/>
+
+    </Grid>
+</Window>
