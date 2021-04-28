@@ -17,13 +17,18 @@ namespace EsGioco
             Danno = danno;
         }
 
+        public Arma()
+        {
+
+        }
+
         public string Nome
         {
             get
             {
                 return _nome;
             }
-            private set
+            set
             {
                 _nome = value;
             }
@@ -35,7 +40,7 @@ namespace EsGioco
             {
                 return _percorsoImmagine;
             }
-            private set
+            set
             {
                 _percorsoImmagine = value;
             }
@@ -47,7 +52,7 @@ namespace EsGioco
             {
                 return _danno;
             }
-            private set
+            set
             {
                 _danno = value;
             }

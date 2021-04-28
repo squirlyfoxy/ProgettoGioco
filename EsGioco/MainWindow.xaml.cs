@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.IO;
 
 namespace EsGioco
 {
@@ -22,14 +24,62 @@ namespace EsGioco
     {
         public Videogioco Videogioco { get; set; }
 
+        private Thread t1;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //Grafica
+            btnGioca.Visibility = Visibility.Hidden;
+
+            //Thread caricamento
+            t1 = new Thread(new ThreadStart(Caricamento));
+            t1.Start();
+        }
+
+        private void Caricamento()
+        {
+            string[] arr = File.ReadAllLines("frasi.txt");
+            double toAdd = 1;
+
+            Dispatcher.BeginInvoke((Action)(() =>
+            {
+                progress.Maximum = arr.Length;
+            }));
+
+            try
+            {
+
+                Videogioco = new Videogioco();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            foreach (string s in arr)
+            {
+                Dispatcher.BeginInvoke((Action)(() =>
+                {
+                    lbl.Content = "Caricamento di: " + s;
+                    progress.Value += toAdd;
+                }));
+
+                Thread.Sleep(1000);
+            }
         }
 
         private void btnGioca_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void progress_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if(progress.Value == progress.Maximum)
+            {
+                btnGioca.Visibility = Visibility.Visible;
+            }
         }
     }
 }

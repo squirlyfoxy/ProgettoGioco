@@ -13,13 +13,18 @@ namespace EsGioco
             Percorso = percorso;
         }
 
+        public Frame()
+        {
+
+        }
+
         public string Percorso
         {
             get
             {
                 return _percorso;
             }
-            private set
+             set
             {
                 _percorso = value;
             }

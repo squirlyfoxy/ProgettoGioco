@@ -20,13 +20,18 @@ namespace EsGioco
             ArmaP2 = armaP2;
         }
 
+        public CombattimentoClasse()
+        {
+
+        }
+
         public Personaggio P1
         {
             get
             {
                 return _p1;
             }
-            private set
+            set
             {
                 _p1 = value;
             }
@@ -38,7 +43,7 @@ namespace EsGioco
             {
                 return _p2;
             }
-            private set
+             set
             {
                 _p2 = value;
             }
@@ -50,7 +55,7 @@ namespace EsGioco
             {
                 return _armaP1;
             }
-            private set
+             set
             {
                 _armaP1 = value;
             }
@@ -62,7 +67,7 @@ namespace EsGioco
             {
                 return _armaP2;
             }
-            private set
+             set
             {
                 _armaP2 = value;
             }

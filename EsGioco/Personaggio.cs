@@ -27,13 +27,18 @@ namespace EsGioco
             Schiva = schiva;
         }
 
+        public Personaggio()
+        {
+
+        }
+
         public string Nome
         {
             get
             {
                 return _nome;
             }
-            private set
+             set
             {
                 _nome = value;
             }
@@ -45,7 +50,7 @@ namespace EsGioco
             {
                 return _percorsoImmagine;
             }
-            private set
+             set
             {
                 _percorsoImmagine = value;
             }
@@ -69,7 +74,7 @@ namespace EsGioco
             {
                 return _listaArmi;
             }
-            private set
+             set
             {
                 _listaArmi = value;
             }
@@ -81,7 +86,7 @@ namespace EsGioco
             {
                 return _listaAnimazioni;
             }
-            private set
+             set
             {
                 _listaAnimazioni = value;
             }
@@ -93,7 +98,7 @@ namespace EsGioco
             {
                 return _puntiForzaBase;
             }
-            private set
+             set
             {
                 _puntiForzaBase = value;
             }

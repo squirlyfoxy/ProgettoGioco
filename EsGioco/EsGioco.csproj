@@ -61,11 +61,18 @@
     </Compile>
     <Compile Include="CombattimentoClasse.cs" />
     <Compile Include="Exceprions\PersonaggioSenzaVitaException.cs" />
+    <Compile Include="ImpostazioniWindow.xaml.cs">
+      <DependentUpon>ImpostazioniWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SceltaPersonaggi.xaml.cs">
       <DependentUpon>SceltaPersonaggi.xaml</DependentUpon>
     </Compile>
     <Compile Include="Videogioco.cs" />
     <Page Include="Combattimento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImpostazioniWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

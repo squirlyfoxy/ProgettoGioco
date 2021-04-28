@@ -20,6 +20,11 @@ namespace EsGioco
             ComeSiGioca = comeSiGioca;
         }
 
+        public Impostazioni()
+        {
+
+        }
+
         public bool Musica
         {
             get
