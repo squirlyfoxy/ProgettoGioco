@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
 using System.IO;
+using System.Diagnostics;
 
 namespace EsGioco
 {
@@ -24,6 +25,7 @@ namespace EsGioco
     {
         public Videogioco Videogioco { get; set; }
 
+        //Thread caricamento
         private Thread t1;
 
         public MainWindow()
@@ -55,6 +57,13 @@ namespace EsGioco
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Debug.WriteLine(ex);
+            }
+
+            //Schermo intero?
+            if (Videogioco.Impostazioni.SchermoIntero)
+            {
+                this.WindowState = WindowState.Maximized;
             }
 
             foreach (string s in arr)
@@ -71,7 +80,10 @@ namespace EsGioco
 
         private void btnGioca_Click(object sender, RoutedEventArgs e)
         {
+            SceltaPersonaggi sp = new SceltaPersonaggi(Videogioco);
 
+            sp.Show();
+            this.Close();
         }
 
         private void progress_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

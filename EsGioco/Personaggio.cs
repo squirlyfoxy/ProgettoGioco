@@ -6,6 +6,7 @@ using System.Xml.Serialization;
 
 namespace EsGioco
 {
+    [XmlRoot(ElementName = "Personaggio")]
     public class Personaggio : IEquatable<Personaggio>
     {
         private string _nome;
@@ -32,6 +33,7 @@ namespace EsGioco
 
         }
 
+        [XmlElement(ElementName = "Nome")]
         public string Nome
         {
             get
@@ -44,6 +46,7 @@ namespace EsGioco
             }
         }
 
+        [XmlElement(ElementName = "PercorsoImmagine")]
         public string PercorsoImmagine
         {
             get
@@ -56,6 +59,7 @@ namespace EsGioco
             }
         }
 
+        [XmlElement(ElementName = "PuntiVita")]
         public int PuntiVita
         {
             get
@@ -67,6 +71,8 @@ namespace EsGioco
                 _puntiVita = value;
             }
         }
+
+        [XmlElement(ElementName = "ListaArmi")]
 
         public List<Arma> ListaArmi
         {
@@ -80,6 +86,8 @@ namespace EsGioco
             }
         }
 
+        [XmlElement(ElementName = "ListaAnimazioni")]
+
         public List<Animazione> ListaAnimazioni
         {
             get
@@ -91,6 +99,8 @@ namespace EsGioco
                 _listaAnimazioni = value;
             }
         }
+
+        [XmlElement(ElementName = "PuntiForzaBase")]
 
         public int PuntiForzaBase
         {
@@ -104,6 +114,7 @@ namespace EsGioco
             }
         }
 
+        [XmlIgnore]
         public bool Schiva
         {
             get
