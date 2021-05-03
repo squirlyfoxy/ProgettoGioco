@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace EsGioco
 {
@@ -11,17 +10,14 @@ namespace EsGioco
         private bool _musica;
         private bool _schermoIntero;
         private bool _effettiSonori;
+        private bool _comeSiGioca;
 
-        public Impostazioni(bool musica, bool schermoIntero, bool effettiSonori)
+        public Impostazioni(bool musica, bool schermoIntero, bool effettiSonori, bool comeSiGioca)
         {
             Musica = musica;
             SchermoIntero = schermoIntero;
             EffettiSonori = effettiSonori;
-        }
-
-        public Impostazioni()
-        {
-
+            ComeSiGioca = comeSiGioca;
         }
 
         public bool Musica
@@ -57,6 +53,18 @@ namespace EsGioco
             set
             {
                 _effettiSonori = value;
+            }
+        }
+
+        public bool ComeSiGioca
+        {
+            get
+            {
+                return _comeSiGioca;
+            }
+            set
+            {
+                _comeSiGioca = value;
             }
         }
     }

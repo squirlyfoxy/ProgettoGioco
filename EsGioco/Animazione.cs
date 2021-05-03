@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace EsGioco
 {
@@ -23,7 +22,7 @@ namespace EsGioco
             {
                 return _nome;
             }
-            set
+            private set
             {
                 _nome = value;
             }
@@ -35,7 +34,7 @@ namespace EsGioco
             {
                 return _fps;
             }
-            set
+            private set
             {
                 _fps = value;
             }

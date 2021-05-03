@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace EsGioco
 {
@@ -14,18 +13,13 @@ namespace EsGioco
             Percorso = percorso;
         }
 
-        public Frame()
-        {
-
-        }
-
         public string Percorso
         {
             get
             {
                 return _percorso;
             }
-             set
+            private set
             {
                 _percorso = value;
             }

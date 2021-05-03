@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 
 namespace EsGioco
 {
@@ -18,18 +17,13 @@ namespace EsGioco
             Danno = danno;
         }
 
-        public Arma()
-        {
-
-        }
-
         public string Nome
         {
             get
             {
                 return _nome;
             }
-            set
+            private set
             {
                 _nome = value;
             }
@@ -41,7 +35,7 @@ namespace EsGioco
             {
                 return _percorsoImmagine;
             }
-            set
+            private set
             {
                 _percorsoImmagine = value;
             }
@@ -53,7 +47,7 @@ namespace EsGioco
             {
                 return _danno;
             }
-            set
+            private set
             {
                 _danno = value;
             }

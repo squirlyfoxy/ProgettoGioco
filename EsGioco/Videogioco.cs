@@ -7,12 +7,6 @@ using System.IO;
 
 namespace EsGioco
 {
-    public class RootPersonaggio
-    {
-        [XmlElement(ElementName = "Personaggio")]
-        public List<Personaggio> Personaggi { get; set; }
-    }
-
     public class Videogioco
     {
         private List<Personaggio> _listaPersognaggi;
@@ -64,15 +58,13 @@ namespace EsGioco
 
         private List<Personaggio> LeggiFileXmlPersonaggio()
         {
-            XmlSerializer deserializzatore = new XmlSerializer(typeof(RootPersonaggio));
+            XmlSerializer deserializzatore = new XmlSerializer(typeof(List<Personaggio>));
             using (StreamReader sr = new StreamReader("personaggi.xml"))
             {
-                /*
                 if (sr.ReadLine() != null)
-                    return (deserializzatore.Deserialize(sr) as RootPersonaggio).Personaggi;
+                    return deserializzatore.Deserialize(sr) as List<Personaggio>;
                 else
-                    throw new Exception("Non sono stati trovati personaggi");*/
-                return (deserializzatore.Deserialize(sr) as RootPersonaggio).Personaggi;
+                    throw new Exception("Non sono stati trovati personaggi");
             }
         }
 

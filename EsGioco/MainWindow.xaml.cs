@@ -12,9 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Threading;
-using System.IO;
-using System.Diagnostics;
 
 namespace EsGioco
 {
@@ -23,75 +20,22 @@ namespace EsGioco
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Videogioco Videogioco { get; set; }
-
-        //Thread caricamento
-        private Thread t1;
-
         public MainWindow()
         {
             InitializeComponent();
-
-            //Grafica
-            btnGioca.Visibility = Visibility.Hidden;
-
-            //Thread caricamento
-            t1 = new Thread(new ThreadStart(Caricamento));
-            t1.Start();
         }
 
-        private void Caricamento()
+        public SceltaPersonaggi SceltaPersonaggi
         {
-            string[] arr = File.ReadAllLines("frasi.txt");
-            double toAdd = 1;
-
-            Dispatcher.BeginInvoke((Action)(() =>
+            get => default;
+            set
             {
-                progress.Maximum = arr.Length;
-            }));
-
-            try
-            {
-
-                Videogioco = new Videogioco();
-            } catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Debug.WriteLine(ex);
-            }
-
-            //Schermo intero?
-            if (Videogioco.Impostazioni.SchermoIntero)
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-
-            foreach (string s in arr)
-            {
-                Dispatcher.BeginInvoke((Action)(() =>
-                {
-                    lbl.Content = "Caricamento di: " + s;
-                    progress.Value += toAdd;
-                }));
-
-                Thread.Sleep(1000);
             }
         }
 
         private void btnGioca_Click(object sender, RoutedEventArgs e)
         {
-            SceltaPersonaggi sp = new SceltaPersonaggi(Videogioco);
 
-            sp.Show();
-            this.Close();
-        }
-
-        private void progress_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            if(progress.Value == progress.Maximum)
-            {
-                btnGioca.Visibility = Visibility.Visible;
-            }
         }
     }
 }
