@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="Combattimento" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="BtnGiocaAncora" Content="Gioca ancora" HorizontalAlignment="Left" Margin="335,236,0,0" VerticalAlignment="Top" Width="122" Height="60" FontSize="16" Click="BtnGiocaAncora_Click" Visibility="Hidden"/>
+        <Button x:Name="BtnHome" Content="Home" HorizontalAlignment="Left" Margin="335,114,0,0" VerticalAlignment="Top" Width="122" Height="60" FontSize="16" Click="BtnHome_Click" Visibility="Hidden"/>
+
     </Grid>
 </Window>

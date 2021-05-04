@@ -23,5 +23,19 @@ namespace EsGioco
         {
             InitializeComponent();
         }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            SceltaPersonaggi finestra = new SceltaPersonaggi();
+            finestra.Show();
+            this.Close();
+        }
+
+        private void BtnGiocaAncora_Click(object sender, RoutedEventArgs e)
+        {
+            CaricamentoPartita finestra = new CaricamentoPartita();
+            finestra.Show();
+            this.Close();
+        }
     }
 }
