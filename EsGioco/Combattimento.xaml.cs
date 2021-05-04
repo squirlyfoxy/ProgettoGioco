@@ -27,8 +27,8 @@ namespace EsGioco
 
         bool sinistra, destra, salta;
         int velocitaGiocatore = 8;
-        int gravita = 20;
-        int velocitaSalto = 5;
+        int gravita = 10;
+        int velocitaSalto = 8;
 
         Rect giocatore1HitBox;
 
@@ -40,7 +40,7 @@ namespace EsGioco
 
             timer = new DispatcherTimer();
             timer.Tick += MetodoTimer;
-            timer.Interval = TimeSpan.FromMilliseconds(20);
+            timer.Interval = TimeSpan.FromMilliseconds(10);
             salta = false;
             sinistra = false;
             destra = false;
@@ -50,26 +50,10 @@ namespace EsGioco
         private void MetodoTimer(object sender, EventArgs e)
         {
 
-            Canvas.SetTop(imgPersonaggio1, Canvas.GetTop(imgPersonaggio1) + velocitaSalto);
+            //Canvas.SetTop(imgPersonaggio1, Canvas.GetTop(imgPersonaggio1) + velocitaSalto);
 
             giocatore1HitBox = new Rect(Canvas.GetLeft(imgPersonaggio1), Canvas.GetTop(imgPersonaggio1), imgPersonaggio1.Width - 15, imgPersonaggio1.Height);
 
-            if(salta)
-            {
-                velocitaSalto = -9;
-
-                gravita -= 1;
-            }
-            else
-            {
-                velocitaSalto = 12;
-            }
-
-            if(gravita < 0)
-            {
-                salta = false;
-            }
-            
             if (sinistra && Canvas.GetLeft(imgPersonaggio1) > 5)
             {
                 Canvas.SetLeft(imgPersonaggio1, Canvas.GetLeft(imgPersonaggio1) - velocitaGiocatore);
@@ -78,6 +62,24 @@ namespace EsGioco
             {
                 Canvas.SetLeft(imgPersonaggio1, Canvas.GetLeft(imgPersonaggio1) + velocitaGiocatore);
             }
+
+            if (salta && Canvas.GetTop(imgPersonaggio1) <= 200 && gravita > 0)
+            {
+                Canvas.SetTop(imgPersonaggio1, Canvas.GetTop(imgPersonaggio1) - velocitaSalto);
+
+                gravita -= 1;
+            }
+            else if (Canvas.GetTop(imgPersonaggio1) < 200)
+            {
+                Canvas.SetTop(imgPersonaggio1, Canvas.GetTop(imgPersonaggio1) + velocitaSalto);
+            }
+
+            if(gravita < 0)
+            {
+                salta = false;
+            }
+            
+            
             
 
         }
@@ -95,8 +97,7 @@ namespace EsGioco
             if (e.Key == Key.Up && !salta)
             {
                 salta = true;
-                gravita = 15;
-                velocitaSalto = -12;
+                
             }
         }
 
@@ -113,6 +114,7 @@ namespace EsGioco
             if (salta)
             {
                 salta = false;
+                gravita = 10;
             }
         }
 
