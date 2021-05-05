@@ -18,8 +18,7 @@ namespace EsGioco
         private List<Animazione> _listaAnimazioni;
         private int _puntiForzaBase;
         private bool _salta, _sinistra, _destra;
-        private int _velocitaSalto, _forza, _velocitaPersonaggio, _altezza;
-        private Thickness _posizione;
+        private int _velocitaSalto, _gravita, _velocitaPersonaggio;
 
         public Personaggio(string nome, int puntiVita, string percorsoImmagine, List<Arma> listaArmi, List<Animazione> listaAnimazioni, int puntiForzaBase, bool schiva = false)
         {
@@ -36,7 +35,13 @@ namespace EsGioco
 
         public Personaggio()
         {
+            VelocitaSalto = 8;
+            Gravita = 10;
+            VelocitaPersonaggio = 8;
 
+            Salta = false;
+            Sinistra = false;
+            Destra = false;
         }
 
         public string Nome
@@ -159,15 +164,15 @@ namespace EsGioco
             }
         }
 
-        public int Forza
+        public int Gravita
         {
             get
             {
-                return _forza;
+                return _gravita;
             }
             set
             {
-                _forza = value;
+                _gravita = value;
             }
         }
 
@@ -180,62 +185,6 @@ namespace EsGioco
             set
             {
                 _velocitaPersonaggio = value;
-            }
-        }
-
-        public int Altezza
-        {
-            get
-            {
-                return _altezza;
-            }
-            set
-            {
-                _altezza = value;
-            }
-        }
-
-        public Thickness Posizione
-        {
-            get
-            {
-                return _posizione;
-            }
-            set
-            {
-                _posizione = value;
-            }
-        }
-
-        public void TastoPremuto(KeyEventArgs eventoTasto)
-        {
-            if (eventoTasto.Key == Key.Left)
-            {
-                Sinistra = true;
-            }
-            if (eventoTasto.Key == Key.Right)
-            {
-                Destra = true;
-            }
-            if (eventoTasto.Key == Key.Up && Salta == false)
-            {
-                Salta = true;
-            }
-        }
-
-        public void TastoLasciato(KeyEventArgs eventoTasto)
-        {
-            if (eventoTasto.Key == Key.Left)
-            {
-                Sinistra = false;
-            }
-            if (eventoTasto.Key == Key.Right)
-            {
-                Destra = false;
-            }
-            if (Salta == true)
-            {
-                Salta = false;
             }
         }
 
